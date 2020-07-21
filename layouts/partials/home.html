@@ -6,8 +6,8 @@
     style="background-image: url('data:image/svg+xml;utf8,{{ $svg }}');"
   ></div>
   <div class="container content text-center">
-    <img src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
-      class="rounded-circle mx-auto d-block img-fluid"
+    <img loading="lazy" src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
+      class="rounded-circle mx-auto d-block img-fluid" alt="Trepix avatar"
     />
     <h1 class="greeting">Hi, I am
       {{ if .Site.Params.author.nickname }}
