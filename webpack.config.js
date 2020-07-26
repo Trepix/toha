@@ -1,5 +1,8 @@
 // webpack.config.js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const glob = require('glob');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+ 
 const path = require('path');
 
 module.exports = {
@@ -61,6 +64,9 @@ module.exports = {
     plugins: [
       new MiniCssExtractPlugin({
         filename: '[name].bundle.css'
+      }),
+      new PurgecssPlugin({
+        paths: glob.sync("./static/assets/dist/*",  { nodir: true }),
       })
     ],
   };
