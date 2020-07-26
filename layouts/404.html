@@ -1,5 +1,6 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="/assets/css/404.css">
+    <link rel="preload" href="/assets/dist/404.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/dist/404.bundle.css"></noscript>
 {{ end }}
 
 {{ define "navbar" }}

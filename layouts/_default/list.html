@@ -1,5 +1,6 @@
 {{ define "header" }}
-    <link rel="stylesheet" href="/assets/css/list.css">
+    <link rel="preload" href="/assets/dist/blog.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/dist/blog.bundle.css"></noscript>
 {{ end }}
 
 {{ define "navbar" }}
@@ -37,5 +38,5 @@
 {{ end }}
 
 {{ define "scripts" }}
-    <script src="/assets/js/list.js"></script>
+    <script src="/assets/dist/blog.bundle.js"></script>
 {{ end }}

@@ -5,14 +5,8 @@
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
-    <!-- import index page specific headers -->
-    <link rel="stylesheet" href="/assets/css/home.css" />
-    <link rel="stylesheet" href="/assets/css/about.css" />
-    <link rel="stylesheet" href="/assets/css/skills.css" />
-    <link rel="stylesheet" href="/assets/css/experiences.css" />
-    <link rel="stylesheet" href="/assets/css/projects.css" />
-    <link rel="stylesheet" href="/assets/css/recent-posts.css" />
-    <link rel="stylesheet" href="/assets/css/achievements.css" />
+    <link rel="preload" href="/assets/dist/homepage.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/dist/homepage.bundle.css"></noscript>
 
     <!-- Add Google Analytics if enabled in configuration -->
     {{ if .Site.GoogleAnalytics }}
@@ -57,7 +51,6 @@
 
     <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
     <script src="https://unpkg.com/ityped@0.0.5"></script>
-    <script src="/assets/js/navbar.js"></script>
-    <script src="/assets/js/home.js"></script>
+    <script src="/assets/dist/homepage.bundle.js"></script>
   </body>
 </html>
