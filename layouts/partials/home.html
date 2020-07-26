@@ -6,7 +6,7 @@
     style="background-image: url('data:image/svg+xml;utf8,{{ $svg }}');"
   ></div>
   <div class="container content text-center">
-    <img loading="lazy" src="{{ if .Site.Params.author.image }}{{ .Site.Params.author.image }}{{ else }}/assets/images/default-avatar.png{{ end }}"
+    <img loading="lazy" src="{{ .Site.Params.author.image }}"
       class="rounded-circle mx-auto d-block img-fluid" alt="Trepix avatar" width="140" height="140"
     />
     <h1 class="greeting">Hi, I am
