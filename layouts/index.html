@@ -5,7 +5,7 @@
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 
-    <link rel="preload" href="/assets/dist/homepage.bundle.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link href="/assets/dist/homepage.bundle.css" rel="stylesheet" rel="preload" as="style">
     <noscript><link rel="stylesheet" href="/assets/dist/homepage.bundle.css"></noscript>
 
     <!-- Add Google Analytics if enabled in configuration -->
