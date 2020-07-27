@@ -1,6 +1,6 @@
 // webpack.config.js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const glob = require('glob');
+const glob = require('glob-all');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
  
 const path = require('path');
@@ -10,8 +10,7 @@ module.exports = {
       common: [
         './static/assets/css/icons.css',
         './static/assets/css/main.css',
-        './static/assets/css/navbar.css',
-        './static/assets/js/navbar.js'
+        './static/assets/css/navbar.css'
       ],
       homepage: [
         './static/assets/css/about.css',
@@ -22,6 +21,7 @@ module.exports = {
         './static/assets/css/recent-posts.css',
         './static/assets/css/skills.css',
         './static/assets/js/home.js',
+        './static/assets/js/navbar.js'
       ],
       blog: [
         './static/assets/css/list.css',
@@ -66,7 +66,13 @@ module.exports = {
         filename: '[name].bundle.css'
       }),
       new PurgecssPlugin({
-        paths: glob.sync("./static/assets/dist/*",  { nodir: true }),
+        paths: glob.sync([
+          "./static/assets/dist/*",
+          "./layouts/*.html",
+          "./layouts/**/*.html",
+        ]),
+        whitelist: ['blue', 'green', 'pink', 'yellow'],
+        whitelistPatterns: [/[^icon-|* icon-]/]
       })
     ],
   };
