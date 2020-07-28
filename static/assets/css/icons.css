@@ -42,7 +42,7 @@
   }
    
   .icon-down-open:before { content: '\e800'; }
-    .icon-search:before { content: '\e801'; }
+  .icon-search:before { content: '\e801'; }
   .icon-minus-circled:before { content: '\e802'; }
   .icon-plus-circled:before { content: '\e803'; }
   .icon-link:before { content: '\e804'; }
