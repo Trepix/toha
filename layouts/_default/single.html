@@ -5,6 +5,8 @@
 />
 <link href="/assets/dist/post.bundle.css" rel="stylesheet" rel="preload" as="style">
 <noscript><link rel="stylesheet" href="/assets/dist/post.bundle.css"></noscript>
+
+<link rel="preload" href="{{ .Site.Params.author.image }}" as="image">
 {{ end }}
 
 {{ define "navbar" }}
