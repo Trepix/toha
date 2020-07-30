@@ -20,7 +20,7 @@
         <h5>Contact Me</h5>
         <ul>
           {{ range $key,$value:=.Site.Params.author.contactInfo }}
-          <li><span>{{ title $key }}: </span> <span>{{ $value }}</span></li>
+          <li><i class="{{ $value.icon }} "></i> <span>{{ $value.value }}</span></li>
           {{ end }}
         </ul>
       </div>
