@@ -1,5 +1,12 @@
-{{ $categories:= ""}}
-{{ if  .Params.categories }}
-    {{ $categories = delimit .Params.categories "," }}
+{{ $categories := split (trim .Dir "posts/") "/" }}
+{{ $chainedCategories := slice }}
+{{ range $index, $element := $categories }}
+    {{ if eq $index 0 }}
+        {{ $chainedCategories = $chainedCategories | append $element }}
+    {{ else }}
+        {{ $elementBefore := index ($categories) (sub $index 1) }}
+        {{ $chainedElement := (printf "%s-%s" $elementBefore $element) }}
+        {{ $chainedCategories = $chainedCategories | append $chainedElement }}
+    {{ end }}
 {{ end }}
-{{ return $categories }}
+{{ return delimit $chainedCategories "," }}
