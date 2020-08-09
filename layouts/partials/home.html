@@ -9,7 +9,7 @@
     {{ $base64_image := base64Encode (readFile (path.Join "static" .Site.Params.author.image)) }}
     <!--   -->
     <img loading="lazy" src="data:image/png;base64, {{ $base64_image }}"
-      class="rounded-circle mx-auto d-block img-fluid" alt="Trepix avatar" width="140" height="140"
+      class="rounded-circle mx-auto d-block img-fluid" alt="Trepix avatar"
     />
     <h1 class="greeting">Hi, I am
       {{ if .Site.Params.author.nickname }}
