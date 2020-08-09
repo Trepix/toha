@@ -1,4 +1,4 @@
-{{ $categories := split (trim .Dir "posts/") "/" }}
+{{ $categories := split (trim .Dir "blog/") "/" }}
 {{ $chainedCategories := slice }}
 {{ range $index, $element := $categories }}
     {{ if eq $index 0 }}
