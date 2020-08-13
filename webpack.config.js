@@ -1,7 +1,9 @@
 // webpack.config.js
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const glob = require('glob-all');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
  
 const path = require('path');
 
@@ -65,6 +67,9 @@ module.exports = {
           }
         }
       ],
+    },
+    optimization: {
+      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
       new MiniCssExtractPlugin({
