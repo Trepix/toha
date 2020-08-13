@@ -6,7 +6,7 @@ help: ## Display this help
 
 .PHONY: build-assets
 build-assets: ## Build the assets
-	docker run -ti --rm \
+	docker run --rm \
 		--volume="${PWD}:/src" \
 		-v /src/node_modules \
 		--name webpack \
