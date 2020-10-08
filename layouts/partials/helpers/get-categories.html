@@ -1,4 +1,4 @@
-{{ $dirWithoutEndSlash := strings.TrimSuffix "/" .Dir }}
+{{ $dirWithoutEndSlash := strings.TrimSuffix "/" .File.Dir }}
 {{ $dirWithoutBlogPreffix := strings.TrimPrefix "blog" $dirWithoutEndSlash }}
 {{ $categories := split (strings.TrimPrefix "/" $dirWithoutBlogPreffix) "/" }}
 {{ $chainedCategories := slice }}
