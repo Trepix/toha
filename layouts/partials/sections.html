@@ -1,11 +1,15 @@
 {{ range . }}
-{{ if .Sections }}
-    <li><a href="#{{ .Params.id }}" data-filter="{{ .Params.id }}">{{ title .Title }}</a>
-    <ul>
-        {{ partial "sections.html" .Sections }}
-    </ul>
-    </li>
+    {{ $dirWithoutEndSlash := strings.TrimSuffix "/" .Dir }}
+    {{ $dirWithoutBlogPreffix := strings.TrimPrefix "blog" $dirWithoutEndSlash }}
+    {{ $categories := split (strings.TrimPrefix "/" $dirWithoutBlogPreffix) "/" }}
+    {{ $chainedCategories := delimit $categories "-" }}
+    {{ if .Sections }}
+        <li><a href="#{{ $chainedCategories }}" data-filter="{{ $chainedCategories }}">{{ title .Title }}</a>
+            <ul>
+                {{ partial "sections.html" .Sections }}
+            </ul>
+        </li>
     {{ else }}
-        <li><a href="#{{ .Params.id }}" data-filter="{{ .Params.id }}">{{ title .Title }}</a></li>
+        <li><a href="#{{ $chainedCategories }}" data-filter="{{ $chainedCategories }}">{{ title .Title }}</a></li>
     {{ end }}
 {{ end }}
