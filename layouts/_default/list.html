@@ -22,17 +22,14 @@
   <div class="content container-fluid" id="content">
     <div class="content-cards">
       <div class="container-fluid filtr-container post-cards" id="post-cards">
-        {{ range (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-          {{ partial "cards/post.html" . }}
-        {{ end }}
-        {{/*  {{ $paginator := .Paginate .Site.RegularPages 120 }}
+        {{ $paginator := .Paginate .Site.RegularPages 200 }}
         {{ range $paginator.Pages }}
           {{ partial "cards/post.html" . }}
-        {{ end }}  */}}
+        {{ end }}
       </div>
-      {{/*  <div class="paginator">
+      <div class="paginator">
         {{ template "_internal/pagination.html" . }}
-      </div>  */}}
+      </div>
     </div>
   </div>
 {{ end }}
