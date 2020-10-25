@@ -45,12 +45,11 @@
   <div class="container">
     <div class="row text-left">
       <div class="col-md-4">
-        <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
-          <img src="/assets/images/logo-inverted.png">
-          Toha
-        </a>
+        <a id="theme" href="https://github.com/trepix/toha" target="#">
+          <img src="/assets/images/logo-inverted.png" alt="Trepix logo"> {{ .Site.Title }}</a>
       </div>
-      <div class="col-md-4">{{ if .Site.Params.copyright }}{{ .Site.Params.copyright }}{{ else }}© 2020 Copyright.{{ end }}</div>
+      {{ $year := now.Format "2006" }}
+      <div class="col-md-4">{{ if .Site.Params.copyright }} {{ .Site.Params.copyright }} {{ else }} © {{ $year }} Copyright.{{ end }}</div>
       <div class="col-md-4">
         Powered by <a href="https://gohugo.io/">Hugo
         <img

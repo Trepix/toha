@@ -1,4 +1,12 @@
 {{ define "header" }}
+<title>{{ .Page.Title }}</title>
+<meta name="description" content="{{ .Page.Summary }}">
+<meta property="og:title" content="{{ .Page.Title }}">
+<meta property="og:description" content="{{ .Page.Summary }}">
+
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<meta property="og:type" content="article">
+<meta property="article:published_time" {{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"

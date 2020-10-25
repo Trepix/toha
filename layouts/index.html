@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{- .Site.Title -}}</title>
+    <title>{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}</title>
+    <meta name="description" content="{{- .Site.Params.Seo.Description -}}">
+    <meta property="og:title" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+    <meta property="og:description" content="{{- .Site.Params.Seo.Description -}}">
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 

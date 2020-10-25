@@ -1,4 +1,9 @@
 {{ define "header" }}
+    <title>{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}</title>
+    <meta name="description" content="{{- .Site.Params.Seo.Description -}}">
+    <meta property="og:title" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+    <meta property="og:description" content="{{- .Site.Params.Seo.Description -}}">
+
     <link href="/assets/dist/blog.bundle.css" rel="stylesheet" rel="preload" as="style">
     <noscript><link rel="stylesheet" href="/assets/dist/blog.bundle.css"></noscript>
 {{ end }}
