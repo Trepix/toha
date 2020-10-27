@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}</title>
-    <meta name="description" content="{{- .Site.Params.Seo.Description -}}">
-    <meta property="og:title" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
-    <meta property="og:description" content="{{- .Site.Params.Seo.Description -}}">
+    <title>{{ .Site.Params.Seo.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+    <meta property="og:title" content="{{ .Site.Params.Seo.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://trepix.io/images/avatar.png">
+    <meta name="twitter:title" content="{{ .Site.Params.Seo.Title }}">
+    <meta name="twitter:description" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+    <meta name="twitter:site" content="@trepixxx">
+
     <!-- import common headers -->
     {{- partial "header.html" . -}}
 

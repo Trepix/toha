@@ -3,10 +3,20 @@
 <meta name="description" content="{{ .Page.Summary }}">
 <meta property="og:title" content="{{ .Page.Title }}">
 <meta property="og:description" content="{{ .Page.Summary }}">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content='{{ partial "helpers/get-hero.html" }}'>
+<meta name="twitter:title" content="{{ .Page.Title }}">
+<meta name="twitter:description" content="{{ .Page.Summary }}">
+<meta name="twitter:site" content="@trepixxx">
 
 {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-<meta property="og:type" content="article">
 <meta property="article:published_time" {{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }}>
+<meta property="article:author" content="{{ .Site.Params.Seo.Name }}">
+
+<!-- <meta property="article:tag" content=""> -->
+
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"

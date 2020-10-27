@@ -1,11 +1,18 @@
 {{ define "header" }}
-    <title>{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}</title>
-    <meta name="description" content="{{- .Site.Params.Seo.Description -}}">
-    <meta property="og:title" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
-    <meta property="og:description" content="{{- .Site.Params.Seo.Description -}}">
+  <title>{{ .Site.Params.Seo.Title }} blog</title>
+  <meta name="description" content="{{ .Site.Params.Seo.Title }} blog | {{ .Site.Params.Seo.Description }}">
+  <meta property="og:title" content="{{ .Site.Params.Seo.Title }} blog">
+  <meta property="og:description" content="{{ .Site.Params.Seo.Title }} blog | {{ .Site.Params.Seo.Description }}">
+  <meta property="og:type" content="website">
 
-    <link href="/assets/dist/blog.bundle.css" rel="stylesheet" rel="preload" as="style">
-    <noscript><link rel="stylesheet" href="/assets/dist/blog.bundle.css"></noscript>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://trepix.io/images/avatar.png">
+  <meta name="twitter:title" content="{{ .Site.Params.Seo.Title }} blog">
+  <meta name="twitter:description" content="{{ .Site.Params.Seo.Title }} | {{ .Site.Params.Seo.Description }}">
+  <meta name="twitter:site" content="@trepixxx">
+
+  <link href="/assets/dist/blog.bundle.css" rel="stylesheet" rel="preload" as="style">
+  <noscript><link rel="stylesheet" href="/assets/dist/blog.bundle.css"></noscript>
 {{ end }}
 
 {{ define "navbar" }}
