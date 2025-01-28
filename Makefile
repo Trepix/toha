@@ -7,6 +7,7 @@ help: ## Display this help
 .PHONY: build-assets
 build-assets: ## Build the assets
 	docker run --rm \
+		--platform linux/amd64/v2 \
 		--volume="${PWD}:/src" \
 		-v /src/node_modules \
 		--name webpack \
@@ -15,7 +16,7 @@ build-assets: ## Build the assets
 
 .PHONY: build-docker-image
 build-docker-image: ## Build docker image to build the assets
-	docker build -t trepix/web-assets-builder -f infrastructure/Dockerfile .
+	docker build --platform linux/amd64/v2 -t trepix/web-assets-builder -f infrastructure/Dockerfile .
 
 
 .PHONY: deploy-docker-image
